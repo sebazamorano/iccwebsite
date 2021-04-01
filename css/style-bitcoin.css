@@ -1258,7 +1258,6 @@ form label.error {
 }
 .content ol li {
   list-style: decimal;
-  list-style: decimal-leading-zero;
   padding-left: 5px;
   margin-bottom: 8px;
 }
@@ -7211,6 +7210,20 @@ h3.heading-section + .lead, h3.heading-lead + .lead {
 .demo-sample-icon hr {
   margin-top: 25px;
   margin-bottom: 25px;
+}
+
+.modal-title {
+  color: #0468AD;
+  margin: 0;
+  line-height: 1.42857143;
+}
+
+#accordion  .panel-title  a {
+  color: #0468AD;
+}
+#accordion  .panel-title a:hover, a:focus, a:active {
+  outline: 0;
+  color: #fa7304;
 }
 
 /*# sourceMappingURL=style-bitcoin.css.map */
