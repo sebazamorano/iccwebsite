@@ -93,8 +93,6 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			$mail->MsgHTML( $bodymsg );
 
-			var_dump($mail);
-			exit;
 			$is_emailed = $mail->Send();
 
 			if( $is_emailed === true ) {

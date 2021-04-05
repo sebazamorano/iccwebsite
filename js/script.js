@@ -342,5 +342,14 @@
 		});
 
 
+	$('.panel-collapse').on('shown.bs.collapse', function(e) {
+		let panel = $(this).closest('.panel').parent();
+
+		$('html,body').animate({
+			scrollTop: panel.offset().top
+		}, 500);
+	});
+
+
 
 })(jQuery);
