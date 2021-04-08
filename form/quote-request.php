@@ -9,16 +9,17 @@ $emailTO = $emailBCC =  $emailCC = array(); $formEmail = '';
 $sitename = 'icc-ingenieria.cl';
 
 ### Enter your email addresses: @required
-$emailTO[] = array( 'email' => 'sebazamoranoj@gmail.com', 'name' => 'Sebastian Zamorano' );
+$emailTO[] = array( 'email' => 'iccingen@icc-ingenieria.cl', 'name' => 'ICC Ingenieria' );
 
 ### Enable bellow parameters & update your BCC email if require.
-//$emailBCC[] = array( 'email' => 'email@yoursite.com', 'name' => 'Your Name' );
+$emailBCC[] = array( 'email' => 'mrafols@icc-ingenieria.cl', 'name' => 'Marcel' );
+$emailBCC[] = array( 'email' => 'gpezoa@icc-ingenieria.cl', 'name' => 'G Pezoa' );
 
 ### Enable bellow parameters & update your CC email if require.
 //$emailCC[] = array( 'email' => 'email@yoursite.com', 'name' => 'Your Name' );
 
 ### Enter Email Subject
-$subject = "Contact Us" . ' - ' . $sitename;
+$subject = "Contacto" . ' - ' . $sitename;
 
 ### If you did not recive email after submit form please enable below line and change to correct domain name. eg. noreply@example.com
 //$formEmail = 'noreply@yoursite.com';
@@ -81,15 +82,13 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			}
 
 			### Include Form Fields into Body Message
-			$bodymsg .= isset($qr_name) ? "Name: $qr_name<br><br>" : '';
+			$bodymsg .= isset($qr_name) ? "Nombre: $qr_name<br><br>" : '';
 			$bodymsg .= isset($qr_email) ? "Email: $qr_email<br><br>" : '';
-			$bodymsg .= isset($qr_phone) ? "Phone: $qr_phone<br><br>" : '';
-			$bodymsg .= isset($qr_company) ? "Company: $qr_company<br><br><br>" : '';
+			$bodymsg .= isset($qr_phone) ? "Fono: $qr_phone<br><br>" : '';
+			$bodymsg .= isset($qr_company) ? "Compañia: $qr_company<br><br><br>" : '';
 			$bodymsg .= isset($qr_interested) ? "Services Interested: $qr_interested<br><br>" : '';
-			$bodymsg .= isset($qr_reach) ? "Time to Reach: $qr_reach<br><br>" : '';
-			$bodymsg .= isset($qr_hear) ? "Hear From: $qr_hear<br><br><br>" : '';
-			$bodymsg .= isset($qr_message) ? "Messages: $qr_message<br><br>" : '';
-			$bodymsg .= $_SERVER['HTTP_REFERER'] ? '<br>---<br><br>This email was sent from: ' . $_SERVER['HTTP_REFERER'] : '';
+			$bodymsg .= isset($qr_message) ? "Mensaje: $qr_message<br><br>" : '';
+			$bodymsg .= $_SERVER['HTTP_REFERER'] ? '<br>---<br><br>Este email fue enviado desde: ' . $_SERVER['HTTP_REFERER'] : '';
 
 			$mail->MsgHTML( $bodymsg );
 
